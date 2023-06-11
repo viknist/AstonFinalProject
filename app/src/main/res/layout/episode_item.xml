@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bg"
+    android:backgroundTint="@color/red"
+    android:backgroundTintMode="screen">
+
+    <TextView
+        android:id="@+id/episodeNameTextList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Название:"
+        android:textColor="@color/material_dynamic_neutral30"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/episodeNameList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:text="@tools:sample/full_names"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/episodeNameTextList"
+        app:layout_constraintTop_toBottomOf="@+id/episodeNameTextList" />
+
+    <TextView
+        android:id="@+id/numberEpisodeTextList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Номер:"
+        android:textColor="@color/material_dynamic_neutral30"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/episodeNameTextList"
+        app:layout_constraintTop_toBottomOf="@+id/episodeNameList" />
+
+    <TextView
+        android:id="@+id/numberEpisodeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/numberEpisodeTextList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/numberEpisodeTextList" />
+
+    <TextView
+        android:id="@+id/releaseDateTextEpisodeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Дата релиза:"
+        android:textColor="@color/material_dynamic_neutral30"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/numberEpisodeTextList"
+        app:layout_constraintTop_toBottomOf="@+id/numberEpisodeTextList" />
+
+    <TextView
+        android:id="@+id/releaseDateEpisodeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@tools:sample/date/ddmmyy"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/releaseDateTextEpisodeList"
+        app:layout_constraintTop_toBottomOf="@+id/releaseDateTextEpisodeList" />
+</androidx.constraintlayout.widget.ConstraintLayout>
