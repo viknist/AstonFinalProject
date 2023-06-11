@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/genderCharacterFilterSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/gender"
+        app:layout_constraintBottom_toBottomOf="@+id/genderFilterTextView"
+        app:layout_constraintEnd_toEndOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintStart_toStartOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintTop_toTopOf="@+id/genderFilterTextView" />
+
+    <TextView
+        android:id="@+id/nameFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/nameCharacter"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/statusCharacterFilterSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:entries="@array/status"
+        app:layout_constraintBottom_toBottomOf="@+id/statusFilterTextView"
+        app:layout_constraintEnd_toStartOf="@+id/clearCharacterFilterImageButton"
+        app:layout_constraintStart_toEndOf="@+id/statusFilterTextView"
+        app:layout_constraintTop_toTopOf="@+id/statusFilterTextView" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
+        android:layout_width="380dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_charactersList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/character_item" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <EditText
+        android:id="@+id/nameCharacterFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/nameFilterTextView"
+        app:layout_constraintEnd_toEndOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintStart_toStartOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintTop_toTopOf="@+id/nameFilterTextView" />
+
+    <TextView
+        android:id="@+id/statusFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/statusText"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/nameFilterTextView"
+        app:layout_constraintTop_toBottomOf="@id/nameFilterTextView" />
+
+    <TextView
+        android:id="@+id/speciesFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/species"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/statusFilterTextView"
+        app:layout_constraintTop_toBottomOf="@+id/statusFilterTextView" />
+
+    <EditText
+        android:id="@+id/speciesCharacterFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/speciesFilterTextView"
+        app:layout_constraintEnd_toEndOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintStart_toStartOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintTop_toTopOf="@+id/speciesFilterTextView" />
+
+    <TextView
+        android:id="@+id/typeFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/type"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/speciesFilterTextView"
+        app:layout_constraintTop_toBottomOf="@+id/speciesFilterTextView" />
+
+    <EditText
+        android:id="@+id/typeCharacterFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/typeFilterTextView"
+        app:layout_constraintEnd_toEndOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintStart_toStartOf="@+id/statusCharacterFilterSpinner"
+        app:layout_constraintTop_toTopOf="@+id/typeFilterTextView" />
+
+    <TextView
+        android:id="@+id/genderFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/gender"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/typeFilterTextView"
+        app:layout_constraintTop_toBottomOf="@+id/typeFilterTextView" />
+
+    <ImageButton
+        android:id="@+id/clearCharacterFilterImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_baseline_clear_24"
+        app:layout_constraintBottom_toTopOf="@id/searchCharacterImageButton"
+        app:layout_constraintEnd_toStartOf="@+id/swiperefresh"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nameCharacterFilterEditText" />
+
+    <ImageButton
+        android:id="@+id/searchCharacterImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@+id/genderCharacterFilterSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/clearCharacterFilterImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/clearCharacterFilterImageButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

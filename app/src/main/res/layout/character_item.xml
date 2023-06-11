@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="190dp"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/imageCharacterItem"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_margin="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameCharacterItem"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameCharacterItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/speciesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/species"
+        app:layout_constraintBottom_toTopOf="@id/statusTextView"
+        app:layout_constraintStart_toStartOf="@+id/imageCharacterItem"
+        app:layout_constraintTop_toBottomOf="@+id/imageCharacterItem" />
+
+    <TextView
+        android:id="@+id/speciesCharacterItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/speciesTextView"
+        app:layout_constraintStart_toEndOf="@+id/speciesTextView" />
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="@string/statusText"
+        app:layout_constraintBottom_toTopOf="@id/genderTextView"
+        app:layout_constraintStart_toStartOf="@+id/speciesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/speciesTextView" />
+
+    <TextView
+        android:id="@+id/genderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/statusTextView"
+        app:layout_constraintTop_toBottomOf="@+id/statusTextView"
+        tools:text="Пол:" />
+
+    <TextView
+        android:id="@+id/statusCharacterItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/statusTextView"
+        app:layout_constraintStart_toEndOf="@+id/statusTextView" />
+
+    <TextView
+        android:id="@+id/genderCharacterItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/genderTextView"
+        app:layout_constraintStart_toEndOf="@+id/genderTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

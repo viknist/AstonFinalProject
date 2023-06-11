@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/locationsListConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.locations.presentation.LocationsListFragment">
+
+    <ImageButton
+        android:id="@+id/clearLocationFilterImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_baseline_clear_24"
+        app:layout_constraintEnd_toStartOf="@+id/swiperefreshLocation"
+        app:layout_constraintTop_toTopOf="@+id/nameLocationFilterEditText" />
+
+    <ImageButton
+        android:id="@+id/searchLocationImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="@+id/clearLocationFilterImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/clearLocationFilterImageButton" />
+
+    <TextView
+        android:id="@+id/nameLocationFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Название:"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/typeLocationFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Тип:"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/nameLocationFilterTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameLocationFilterTextView" />
+
+    <TextView
+        android:id="@+id/dimensionLocationFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Измерение:"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/nameLocationFilterTextView"
+        app:layout_constraintTop_toBottomOf="@+id/typeLocationFilterTextView" />
+
+    <EditText
+        android:id="@+id/nameLocationFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/nameLocationFilterTextView"
+        app:layout_constraintEnd_toStartOf="@+id/clearLocationFilterImageButton"
+        app:layout_constraintStart_toEndOf="@+id/dimensionLocationFilterTextView"
+        app:layout_constraintTop_toTopOf="@+id/nameLocationFilterTextView" />
+
+    <EditText
+        android:id="@+id/typeLocationFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/typeLocationFilterTextView"
+        app:layout_constraintEnd_toStartOf="@+id/clearLocationFilterImageButton"
+        app:layout_constraintStart_toStartOf="@+id/nameLocationFilterEditText"
+        app:layout_constraintTop_toTopOf="@+id/typeLocationFilterTextView" />
+
+    <EditText
+        android:id="@+id/dimensionLocationFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dimensionLocationFilterTextView"
+        app:layout_constraintEnd_toStartOf="@+id/clearLocationFilterImageButton"
+        app:layout_constraintStart_toStartOf="@+id/nameLocationFilterEditText"
+        app:layout_constraintTop_toTopOf="@+id/dimensionLocationFilterTextView" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefreshLocation"
+        android:layout_width="380dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_locationsList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/location_item" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
