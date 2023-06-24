@@ -4,7 +4,7 @@ import android.app.Application
 import ru.viknist.rickandmorty.baseapp.di.AppComponent
 import ru.viknist.rickandmorty.core.App
 
-class MainApp: Application(), App {
+class MainApp : Application(), App {
 
     private var appComponent: AppComponent? = null
 
@@ -13,7 +13,7 @@ class MainApp: Application(), App {
     }
 
     private fun getAppComponent(): AppComponent {
-        if (appComponent == null){
+        if (appComponent == null) {
             appComponent = AppComponent.init(applicationContext)
         }
         return appComponent!!

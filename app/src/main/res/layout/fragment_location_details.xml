@@ -13,10 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@tools:sample/full_names"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,11 +38,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="@tools:sample/full_names"
         app:layout_constraintBottom_toBottomOf="@+id/typeTextLocationDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/typeTextLocationDetails" />
 
     <TextView
@@ -58,12 +62,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="@tools:sample/full_names"
         app:layout_constraintBottom_toBottomOf="@+id/dimensionTextLocationDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/dimensionTextLocationDetails" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefreshLocationDetails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dimensionTextLocationDetails">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_charactersLocationDetails"
@@ -78,4 +96,5 @@
         tools:listitem="@layout/character_item"
         app:layout_constraintTop_toBottomOf="@+id/dimensionTextLocationDetails" />
 
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

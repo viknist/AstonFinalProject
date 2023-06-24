@@ -3,27 +3,28 @@ package ru.viknist.rickandmorty.features.characters.data.service
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import ru.viknist.rickandmorty.features.characters.data.dto.CharacterModel
-import ru.viknist.rickandmorty.features.characters.data.dto.CharactersResultModel
+import ru.viknist.rickandmorty.features.characters.data.dto.CharacterResponse
+import ru.viknist.rickandmorty.features.characters.data.dto.CharactersResultResponse
 
 interface CharacterService {
 
     @GET("character/")
-    fun getCharacters(
+    suspend fun getCharacters(
+        @Query("page") page: Int,
         @Query("name") name: String,
         @Query("status") status: String,
         @Query("species") species: String,
         @Query("type") type: String,
         @Query("gender") gender: String
-    ): CharactersResultModel
+    ): CharactersResultResponse
 
     @GET("character/{id}/")
-    fun getCharacterById(
+    suspend fun getCharacterById(
         @Path("id") id: Int
-    ): CharacterModel
+    ): CharacterResponse
 
     @GET("character/{id}/")
-    fun getCharacterByListId(
-        @Path("id") idList: List<Int>
-    ): List<CharacterModel>
+    suspend fun getCharacterByListId(
+        @Path("id") idList: String
+    ): List<CharacterResponse>
 }

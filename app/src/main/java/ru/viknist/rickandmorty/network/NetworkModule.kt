@@ -33,12 +33,12 @@ class NetworkModule {
     @Provides
     fun provideGsonConverterFactory(
         gson: Gson
-    ): GsonConverterFactory{
+    ): GsonConverterFactory {
         return GsonConverterFactory.create(gson)
     }
 
     @Provides
-    fun provideGson(): Gson{
+    fun provideGson(): Gson {
         return GsonBuilder().create()
     }
 }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/episodesListConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.episodes.presentation.EpisodesListFragment">
+
+    <TextView
+        android:id="@+id/nameEpisodeFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Название:"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/episodeEpisodeFilterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Эпизод:"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/searchEpisodeImageButton"
+        app:layout_constraintStart_toStartOf="@+id/nameEpisodeFilterTextView" />
+
+    <EditText
+        android:id="@+id/nameEpisodeFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/nameEpisodeFilterTextView"
+        app:layout_constraintEnd_toStartOf="@+id/clearEpisodeFilterImageButton"
+        app:layout_constraintStart_toEndOf="@+id/nameEpisodeFilterTextView"
+        app:layout_constraintTop_toTopOf="@+id/nameEpisodeFilterTextView" />
+
+    <EditText
+        android:id="@+id/episodeEpisodeFilterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/episodeEpisodeFilterTextView"
+        app:layout_constraintEnd_toEndOf="@+id/nameEpisodeFilterEditText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameEpisodeFilterEditText"
+        app:layout_constraintTop_toTopOf="@+id/episodeEpisodeFilterTextView" />
+
+    <ImageButton
+        android:id="@+id/clearEpisodeFilterImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_baseline_clear_24"
+        app:layout_constraintEnd_toStartOf="@+id/swiperefreshEpisode"
+        app:layout_constraintTop_toTopOf="@+id/nameEpisodeFilterEditText" />
+
+    <ImageButton
+        android:id="@+id/searchEpisodeImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="@+id/clearEpisodeFilterImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/clearEpisodeFilterImageButton" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefreshEpisode"
+        android:layout_width="380dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_episodeList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:listitem="@layout/episode_item" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

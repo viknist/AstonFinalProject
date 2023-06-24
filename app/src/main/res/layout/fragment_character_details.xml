@@ -5,6 +5,7 @@
     android:id="@+id/characterDetailsConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".features.characters.presentation.CharacterDetailsFragment" >
 
     <ImageView
@@ -24,7 +25,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="@tools:sample/full_names"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +37,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/nameCharacterDetails"
         app:layout_constraintTop_toBottomOf="@+id/nameCharacterDetails" />
 
@@ -47,8 +50,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/speciesCharacterDetails"
         app:layout_constraintTop_toBottomOf="@+id/speciesCharacterDetails" />
 
@@ -57,6 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/statusCharacterDetails"
         app:layout_constraintTop_toBottomOf="@+id/statusCharacterDetails" />
 
@@ -76,9 +85,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/genderTextCharacterDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/genderTextCharacterDetails" />
 
     <TextView
@@ -96,11 +108,14 @@
         android:id="@+id/originCharacterDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintStart_toEndOf="@id/originTextCharacterDetails"
-        app:layout_constraintBottom_toBottomOf="@+id/originTextCharacterDetails" />
+        app:layout_constraintBottom_toBottomOf="@+id/originTextCharacterDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/originTextCharacterDetails" />
 
     <TextView
         android:id="@+id/locationTextCharacterDetails"
@@ -118,13 +133,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/locationTextCharacterDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/locationTextCharacterDetails" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_episodesCharacterDetails"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeCharacterDetails"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -134,6 +152,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationTextCharacterDetails">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_episodesCharacterDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/episode_item"
         app:layout_constraintTop_toBottomOf="@+id/locationTextCharacterDetails" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

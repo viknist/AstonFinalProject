@@ -1,26 +1,23 @@
 package ru.viknist.rickandmorty.network
 
-import android.content.Context
-import dagger.BindsInstance
 import dagger.Component
+import ru.viknist.rickandmorty.core.NetworkProvider
 
 @Component(
     modules = [NetworkModule::class]
 )
-interface NetworkComponent {
+interface NetworkComponent : NetworkProvider {
 
     companion object {
-        fun init(context: Context): NetworkComponent {
+        fun init(): NetworkComponent {
             return DaggerNetworkComponent.factory()
-                .create(context)
+                .create()
         }
     }
 
     @Component.Factory
     interface Factory {
 
-        fun create(
-            @BindsInstance context: Context
-        ): NetworkComponent
+        fun create(): NetworkComponent
     }
 }

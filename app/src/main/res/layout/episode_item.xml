@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="180dp"
     android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
     android:background="@drawable/layout_bg"
     android:backgroundTint="@color/red"
     android:backgroundTintMode="screen">
@@ -14,8 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Название:"
-        android:textColor="@color/material_dynamic_neutral30"
+        android:text="@string/episodeName"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,8 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Номер:"
-        android:textColor="@color/material_dynamic_neutral30"
+        android:text="@string/episodeNumber"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/episodeNameTextList"
         app:layout_constraintTop_toBottomOf="@+id/episodeNameList" />
@@ -65,8 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Дата релиза:"
-        android:textColor="@color/material_dynamic_neutral30"
+        android:text="@string/air_date"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/numberEpisodeTextList"
         app:layout_constraintTop_toBottomOf="@+id/numberEpisodeTextList" />
